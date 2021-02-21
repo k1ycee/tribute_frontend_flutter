@@ -23,7 +23,7 @@ class TributesViewModel extends ChangeNotifier {
     this.tributes = getTributes;
     notifyListeners();
     setBusy(false);
-  }
+  } 
 
   Future<void> writeTribute(String name, String body) async {
     setBusy(true);

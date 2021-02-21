@@ -94,7 +94,7 @@ class _WriteTributeState extends State<WriteTribute> {
                     children: [
                       CustomButtonSend(onTap: () async {
                         await model.writeTribute(
-                            name.text.toUpperCase(), body.text.toUpperCase());
+                            name.text.toUpperCase(), body.text);
                         if (model.success) {
                           Navigator.pushNamed(context, ViewTributesPages);
                         } else {
