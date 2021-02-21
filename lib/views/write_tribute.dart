@@ -93,18 +93,24 @@ class _WriteTributeState extends State<WriteTribute> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       CustomButtonSend(onTap: () async {
-                        await model.writeTribute(
-                            name.text.toUpperCase(), body.text);
-                        if (model.success) {
-                          Navigator.pushNamed(context, ViewTributesPages);
-                        } else {
-                          showDialog(
-                            context: context,
-                            builder: (context) => Container(
-                                color: Colors.amberAccent,
-                                height: 200,
-                                width: 300),
-                          );
+                        if (name == null && body == null) {
+                          await model.writeTribute(
+                              name.text.toUpperCase(), body.text);
+                          if (model.success) {
+                            Navigator.pushNamed(context, ViewTributesPages);
+                          } else {
+                            showDialog(
+                              context: context,
+                              builder: (context) => Container(
+                                  color: Colors.amberAccent,
+                                  height: 200,
+                                  width: 300),
+                            );
+                          }
+                        }
+                        else{
+                          final snackBar = SnackBar(content: Text('Either Field Cannot be empty', style: TextStyle(color: Colors.white),),backgroundColor: Colors.redAccent,);
+                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
                         }
                         name.clear();
                         body.clear();
