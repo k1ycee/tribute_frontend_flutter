@@ -93,7 +93,7 @@ class _WriteTributeState extends State<WriteTribute> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       CustomButtonSend(onTap: () async {
-                        if (name == null || body == null) {
+                        if (name.text == "" || body.text == "") {
                           await model.writeTribute(
                               name.text.toUpperCase(), body.text);
                           if (model.success) {
