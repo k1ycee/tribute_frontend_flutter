@@ -22,7 +22,7 @@ class _OptionsPageState extends State<OptionsPage> {
           SizedBox(height: 10),
           CustomButton(border: true, onTap: () => Navigator.pushNamed(context, WriteTributesPage),),
           SizedBox(height: 10),
-          CustomButton(onTap: () => Navigator.pushNamed(context, MakeDonationPage),),
+          // CustomButton(onTap: () => Navigator.pushNamed(context, MakeDonationPage),),
           SizedBox(height: 100),
         ],
       ),
